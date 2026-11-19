@@ -68,3 +68,5 @@ app.MapDelete("/api/products/{id:int}", async (int id, AppDbContext db) =>
 .WithName("DeleteProduct");
 
 app.Run();
+// Action de Suppression ajoutée par mon collaborateur Moez :)
+// Test des pull requests !!! par Moez :D
