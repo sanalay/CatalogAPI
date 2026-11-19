@@ -52,21 +52,7 @@ app.MapGet("/api/get-product/{id:int}", async (int id, AppDbContext db) =>
 .WithName("GetProductById");
 
 
-app.MapDelete("/api/products/{id:int}", async (int id, AppDbContext db) =>
-{
-var product = await db.Products.FindAsync(id);
-if (product is null)
-{
-return Results.NotFound(new
-{
-message = $"Aucun produit trouvé avec l'identifiant {id}."
-});
-}
-db.Products.Remove(product);
-await db.SaveChangesAsync();
-return Results.NoContent();
-})
-.WithName("DeleteProduct");
-
 
 app.Run();
+// Action de Suppression ajoutée par mon collaborateur Moez :)
+// Test des pull requests !!! par Moez :D
